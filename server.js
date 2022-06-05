@@ -1,9 +1,9 @@
 var express = require ('express')
-var network = require ('./main.js')
+var network = require ('./main')
 
 var app = express();
 
-var myBlockchain;
+var myBlockchain = new network.Blockchain()
 
 app.get("/init",(req,res)=>{
 	console.log("Blockchain Started!!")
@@ -15,7 +15,7 @@ app.get("/init",(req,res)=>{
 
 
 app.get("/mine",(req,res)=>{
-	myBlockchain.newBlockChain();
+	myBlockchain.mineNewBlock()
 	res.send("Mined Successfully");
 })
 

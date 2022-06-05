@@ -157,13 +157,14 @@ class Blockchain{
     }
 }
 
+// module.exports.Block = Block
+// module.exports = Transaction
 module.exports = {Blockchain,Transaction}
-module.exports.Block = Block
-module.exports = Transaction
+
 console.log("formater " + uuidv4().split('-').join(""))
 
 var xyzNetwork = new Blockchain();
-//console.log(xyzNetwork)
+console.log(xyzNetwork)
 xyzNetwork.mineNewBlock()
 xyzNetwork.mineNewBlock()
 xyzNetwork.mineNewBlock()
