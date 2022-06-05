@@ -23,8 +23,22 @@ app.get("/getAllBlocks",(req,res)=>{
 	res.send(myBlockchain.chain);
 })
 
+app.get("/crTx",(req,res)=>{
+    myBlockchain.createTxAndSign()
+    res.send("Tx Successfull");
+    
+})
 
+app.get("/transaction",(req,res)=>{
+    res.send(myBlockchain.getTransactions());
 
-app.listen(5004,()=>{
-	console.log("Server started at port 5004")
+})
+
+app.get("/balance",(req,res)=>{
+    myBlockchain.getBalance()
+    res.send("Updated Recent Balance")
+})
+
+app.listen(5003,()=>{
+	console.log("Server started at port 5003")
 }); 
