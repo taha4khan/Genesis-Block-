@@ -201,12 +201,16 @@ module.exports = {Blockchain,Transaction}
 console.log("generate random string== " + uuidv4().split('-').join(""))
 
 var xyzNetwork = new Blockchain();
+//console.log(xyzNetwork)
+
 xyzNetwork.createTxAndSign("532b3485dea67e51bdb97abad22a79a7d483fb35d7febe010bc76e04f9332aee",newTx)
-console.log(xyzNetwork)
+
 xyzNetwork.mineNewBlock()
+xyzNetwork.mineNewBlock()
+
 xyzNetwork.createTxAndSign("haseeb1","anus2" ,3)
 xyzNetwork.createTxAndSign("umair3","haris4" ,4)
-//xyzNetwork.createTx("naim","adil" ,7)
+xyzNetwork.createTxAndSign("naim","adil" ,7)
 // xyzNetwork.chain[2].transactions[0].from =="aqib"
 console.log(xyzNetwork)
 console.log("Is chain Valid ---> " + xyzNetwork.isChainValid())
